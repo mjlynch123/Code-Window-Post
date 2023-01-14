@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.3.1/build/styles/default.min.css">
+    <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.3.1/build/highlight.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="index.css">
+    <title>Blog</title>
+</head>
+<body>
+    <main>
+        <header>
+            <h1>Making A Code Window With HTML & CSS</h1>
+        </header>
+
+        <section>
+            <p class="opening">
+                The ability to effectively display code on an HTML page can greatly enhance the functionality
+                and usability of a project. This guide will provide instruction on the creation of a code window for
+                the purpose of on-screen code display. It is intended for individuals with a foundational understanding of HTML and CSS.
+            </p>
+
+            <p>
+                To begin, we will establish a new HTML file. Utilize your preferred IDE, in this example we will utilize VSCode, however, 
+                other options are available. Once in the editor, create a new file, naming it. <span class="ref">index.html</span>
+                and an additional file for styling purposes, naming it <span class="ref">index.css</span>
+            </p>
+
+            <p>
+                With the creation of our HTML and CSS files, we can now begin coding. Within the body element, establish
+                a div class named <span class="ref">code-window</span>. Within this div, create an additional div class named <span class="ref">top-bar</span>. Within the <span class="ref">top-bar</span> div, create
+                three further divs, respectively named <span class="ref">close</span>, <span class="ref">minimize</span>, and <span class="ref">maximize</span>
+            </p>
+
+                    <!-- Reuse this code for all code windows-->
+        <div class="code-window">
+            <div class="top-bar">
+                <div class="close" style="background-color: #ff605c;"></div>
+                <div class="minimize" style="background-color: #FFBD44;"></div>
+                <div class="maximize" style="background-color: #00CA4E;"></div>
+            </div>
+            <pre>
+                <code>
+ <span class="comment">&#60!-- This is a comment -- &#62</span>
+ &#60;<span>div</span> <span class="classColor">class</span>=<span class="className">"code-window"</span>&#62;
+    &#60;<span>div</span> <span class="classColor">class</span>=<span class="className">"close"</span><span class="classColor"> style</span>=<span class="className">"background-color: red"</span>&#62;&#60;/<span>div</span>&#62;
+    &#60;<span>div</span> <span class="classColor">class</span>=<span class="className">"minimize"</span> <span class="classColor">style</span>=<span class="className">"background-color: yellow"</span>&#62;&#60;/<span>div</span>&#62;
+    &#60;<span>div</span> <span class="classColor">class</span>=<span class="className">"maximize"</span> <span class="classColor">style</span>=<span class="className">"background-color: green"</span>&#62;&#60;/<span>div</span>&#62;
+ &#60;/<span>div</span>&#62;
+                </code>
+            </pre>
+        </div>
+        </section>
+
+        <section>
+            <p>
+                In the code above, we created the window, the top-bar, and the window buttons, but it is not yet aesthetically pleasing.
+                Let's go into our <span class="ref">index.css</span>.  The provided CSS can be utilized as is or tailored to personal preference. 
+                A detailed explanation of each styling element will also be provided.
+            </p>
+
+            <div class="code-window">
+                <div class="top-bar">
+                    <div class="close" style="background-color: #ff605c;"></div>
+                <div class="minimize" style="background-color: #FFBD44;"></div>
+                <div class="maximize" style="background-color: #00CA4E;"></div>
+                </div>
+                <pre>
+                    <code>
+ <span class="className">.code-window {</span>
+    <span class="classColor">box-shadow:</span> <span class="number">-3px 5px 15px</span> <span class="letter">#a6a6a6</span>;
+    <span class="classColor">background-color:</span> <span class="letter">black</span>;
+    <span class="classColor">color:</span> <span class="letter">silver</span>;
+    <span class="classColor">border-radius:</span> <span class="number">5px</span>;
+    <span class="classColor">margin-left:</span> <span class="letter">auto;</span>
+    <span class="classColor">margin-right:</span> <span class="letter">auto;</span>;
+    <span class="classColor">width:</span> <span class="number">800px</span>;
+ <span class="className">}</span>
+                        
+ <span class="className">.top-bar {</span>
+    <span class="classColor">height:</span> <span class="number">20px</span>;
+    <span class="classColor">display:</span> <span class="letter">flex</span>;
+    <span class="classColor">align-items:</span> <span class="letter">center</span>;
+ <span class="className">}</span>
+                        
+ <span class="className">.close</span>, <span class="className">.minimize</span>, <span class="className">.maximize {</span>
+    <span class="classColor">border-radius:</span> <span class="number">15px</span>;
+    <span class="classColor">margin-inline-start:</span> <span class="number">7px</span>;
+    <span class="classColor">height:</span> <span class="number">11px</span>;
+    <span class="classColor">width:</span> <span class="number">11px</span>;
+ <span class="className">}</span>
+                    </code>
+                </pre>
+            </div>
+
+            <p>
+                We have now added styling to our page, achieving a basic shape and visual appearance for our window. Feel free to personalize and tailor
+                the design to your liking. Let's now delve further into the specific functions of each styling element:
+            </p>
+
+            <div class="code-window">
+                <div class="top-bar">
+                    <div class="close" style="background-color: #ff605c;"></div>
+                    <div class="minimize" style="background-color: #FFBD44;"></div>
+                    <div class="maximize" style="background-color: #00CA4E;"></div>
+                </div>
+                <pre>
+                    <code>
+ <span class="className">.code-window {</span>
+    <span class="classColor">box-shadow:</span> <span class="number">-3px 5px 15px</span> <span class="letter">#a6a6a6</span>;
+    <span class="classColor">background-color:</span> <span class="letter">black</span>;
+    <span class="classColor">color:</span> <span class="letter">silver</span>;
+    <span class="classColor">border-radius:</span> <span class="number">5px</span>;
+    <span class="classColor">margin-left:</span> <span class="letter">auto;</span>
+    <span class="classColor">margin-right:</span> <span class="letter">auto;</span>;
+    <span class="classColor">width:</span> <span class="number">800px</span>;
+ <span class="className">}</span>                      
+                    </code>
+                </pre>
+            </div>
+
+            <p>
+                The code-window class selector has been utilized to add a subtle three-dimensional effect through the implementation of a light gray <span class="ref">box-shadow</span>,
+                as well as a black <span class="ref">background-color</span>. Additionally, a default color of silver has been set for elements without a specified class. To achieve a polished look,
+                a <span class="ref">border-radius</span> of 5px has been applied, creating rounded corners for the window. The <span class="ref">margin-right</span> and <span class="ref">margin-left</span> attributes have been set to auto" to ensure that the window remains
+                centered within the browser window, a best practice for maintaining visual balance. Additionally, a width of 800px has been set for the window.
+            </p>
+
+            <div class="code-window">
+                <div class="top-bar">
+                    <div class="close" style="background-color: #ff605c;"></div>
+                    <div class="minimize" style="background-color: #FFBD44;"></div>
+                    <div class="maximize" style="background-color: #00CA4E;"></div>
+                </div>
+                <pre>
+                    <code>
+ <span class="className">.top-bar {</span>
+    <span class="classColor">height:</span> <span class="number">20px</span>;
+    <span class="classColor">display:</span> <span class="letter">flex</span>;
+    <span class="classColor">align-items:</span> <span class="letter">center</span>;
+ <span class="className">}</span>
+                    </code>
+                </pre>
+            </div>
+
+            <p>
+                This one can be confusing if you aren't familiar with <span class="ref">flex</span>. What we are doing is setting the <span class="ref">height</span> so that it is 20px and then making sure we are displaying our window buttons
+                next to one another in a line using <span class="ref">flex</span>. Then we are centering the buttons in the <span class="ref">div</span> class.
+            </p>
+
+            <div class="code-window">
+                <div class="top-bar">
+                    <div class="close" style="background-color: #ff605c;"></div>
+                    <div class="minimize" style="background-color: #FFBD44;"></div>
+                    <div class="maximize" style="background-color: #00CA4E;"></div>
+                </div>
+                <pre>
+                    <code>
+ <span class="className">.close</span>, <span class="className">.minimize</span>, <span class="className">.maximize {</span>
+    <span class="classColor">border-radius:</span> <span class="number">15px</span>;
+    <span class="classColor">margin-inline-start:</span> <span class="number">7px</span>;
+    <span class="classColor">height:</span> <span class="number">11px</span>;
+    <span class="classColor">width:</span> <span class="number">11px</span>;
+ <span class="className">}</span>
+                    </code>
+                </pre>
+            </div>
+
+            <p>
+                Here we are grabbing the selectors <span class="ref">close</span>, <span class="ref">minimize</span>, and <span class="ref">maximize</span> and giving them a <span class="ref">border-radius</span>
+                of 15px so that they appear circular and then adding a <span class="ref">height</span> and <span class="ref">width</span> of 11px so that we have a perfect circle. The one thing some may not understand
+                is <span class="ref">margin-inline-start</span>, this adds margin to the start of the element, so here we are giving it a value of 7px meaning that at the beginging of the <span class="ref">div</span>, there will
+                be 7px from the element in front of it.
+            </p>
+
+            <p>
+                Now we get to move onto the fun part where we can actually display our code to the page. Follow along down below to find out more about this:
+            </p>
+
+            <div class="code-window">
+                <div class="top-bar">
+                    <div class="close" style="background-color: #ff605c;"></div>
+                    <div class="minimize" style="background-color: #FFBD44;"></div>
+                    <div class="maximize" style="background-color: #00CA4E;"></div>
+                </div>
+                <pre>
+                    <code>
+ &#60<span>pre</span>&#62
+    &#60<span>code</span>&#62
+    &#60/<span>code</span>&#62
+ &#60/<span>pre</span>&#62
+                    </code>
+                </pre>
+            </div>
+
+            <p>
+                This is the basic setup that you want to start with if you are trying to display code in your window.
+                The first tag that we see is <span class="ref">pre</span>. This stands for preformatted text and then we have <span class="ref">code</span>.
+                This is where all the code that you want to display goes. Don't forget to add this to the <span class="ref">code-window</span> div. Let's move onto the next part.
+            </p>
+
+            <div class="code-window">
+                <div class="top-bar">
+                    <div class="close" style="background-color: #ff605c;"></div>
+                    <div class="minimize" style="background-color: #FFBD44;"></div>
+                    <div class="maximize" style="background-color: #00CA4E;"></div>
+                </div>
+                <pre>
+                    <code>
+ &#60<span>pre</span>&#62
+    &#60<span>code</span>&#62
+        &amp;#60;p&amp;#62;display a paragraph element to code&amp;#60;/p&amp;#62;
+    &#60/<span>code</span>&#62
+ &#60/<span>pre</span>&#62
+                    </code>
+                </pre>
+            </div>
+
+            <p>
+                In this article, we learned how to do many things. Firstly, we learned how to use <span class="ref">pre</span> and <span class="ref">code</span>.
+                Secondly, we learned how to use <span class="ref"><a href="https://www.w3schools.com/html/html_entities.asp" target="_blank" style="color: blue;">HTML entities</a></span> which can display symbols that would otherwise be read as code in the IDE.
+            </p>
+        </section>
+    </main>
+</body>
+</html>
