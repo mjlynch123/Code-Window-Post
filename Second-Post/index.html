@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.3.1/build/styles/default.min.css">
+    <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.3.1/build/highlight.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/5e86550e56.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="../index.css">
+    <title>Blog</title>
+</head>
+<body>
+    <main>
+        <a href="https://mjlynch123.github.io/Blog-site/" style="color: black; text-decoration: none;"><p style="font-weight: bold;"><i class="fa-solid fa-arrow-left"></i> Back</p></a>
+        <header>
+            <h1>A Quick Guide Of How To Use Position</h1>
+        </header>
+
+        <section>
+            <p>If you are interested in checking out the GitHub repo, <em><a href="https://github.com/mjlynch123/Code-Window-Post" target="_blank" style="color: #1aa3ff;">click here</a></em>.</p>
+            
+            <p class="opening">
+                Using the <span class="ref">position</span> property can confuse many new coders, but fear not, cause I am here with this walkthrough of how to use this property
+                effectively. 
+            </p>
+
+            <p>
+                To begin, we will create a new HTML file. Feel free to use your preferred IDE, in this example I will use VSCode. Once we are in our preferred IDE,
+                go ahead and create a file and name it <span class="ref">index.html</span>. When that is done, We will create another file and name it 
+                <span class="ref">index.css</span>.
+            </p>
+
+            <p>
+                We've created our HTML and CSS files, we can now begin coding. Within the body of the page, establish
+                a section and give it a class name of <span class="ref">top-right</span>, This will be used later. Within this section, create an h1 element. Inside of the newly created h1 element, put your name. 
+            </p>
+
+            <p>It should look like this:</p>
+
+                    <!-- Reuse this code for all code windows-->
+        <div class="code-window">
+            <div class="top-bar">
+                <div class="close" style="background-color: #ff605c;"></div>
+                <div class="minimize" style="background-color: #FFBD44;"></div>
+                <div class="maximize" style="background-color: #00CA4E;"></div>
+            </div>
+            <pre>
+                <code>
+ <span class="comment">&#60!-- Creating a section with a class name of top-right -- &#62</span>
+ &#60;<span>section</span> <span class="classColor">class</span>=<span class="className">"top-right"</span>&#62;
+    &#60;<span>h1</span></span>&#62;Your Name&#60;/<span>h1</span>&#62;
+ &#60;/<span>section</span>&#62;
+                </code>
+            </pre>
+        </div>
+        </section>
+
+        <section>
+            <h2>Static</h2>
+            <p>
+                There 5 main position values that we will focus on. The first one is <span class="ref">static</span>. 
+                When you put your element on the page, static will be the default value. If you are following along you can go ahead
+                and open up your file in a browser of your choice. You should see your name in the top left hand corner of the page. This is what a position of static 
+                looks like on your page. <span class="ref">NOTE: You do not have to define an element as position: static; unless you are moving that certain element back to default positioning.</span>
+            </p>
+
+            <h2>Relative</h2>
+            <p>
+                The second value of the five will be <span class="ref">relative</span>. This means that the element is relative to it normal position, while also keeping it normal flow within the document. 
+                This is best for when you are working with nested elements because it will allow you to move an element around within the parent element and not affect the flow of any others.
+            </p>
+
+            <p>
+                Using <span class="ref">relative</span> will allow you to use the top, bottom, left, and right properties. These will help you align content within the parent element by giving these values.
+                You can use <span class="ref">px</span>, <span class="ref">%</span>, <span class="ref">em</span>, and <span class="ref">rem</span> to put these elements where you want them to be.
+            </p>
+
+            <div class="code-window">
+                <div class="top-bar">
+                    <div class="close" style="background-color: #ff605c;"></div>
+                <div class="minimize" style="background-color: #FFBD44;"></div>
+                <div class="maximize" style="background-color: #00CA4E;"></div>
+                </div>
+                <pre>
+                    <code>
+ <span class="className">.top-right {</span>
+    <span class="classColor">border</span> <span class="number">1</span><span class="letter">px solid black</span>;
+    <span class="classColor">width:</span> <span class="number">350</span><span class="letter">px</span>;
+    <span class="className">}</span>
+
+ <span class="className">.h1 {</span>
+    <span class="classColor">position</span> <span class="letter">relative</span>;
+    <span class="classColor">background-color:</span> <span class="letter">black</span>;
+ <span class="className">}</span>
+                    </code>
+                </pre>
+            </div>
+
+            <p>
+                We have now added styling to our page, achieving a basic shape and visual appearance for our window. Feel free to personalize and tailor
+                the design to your liking. Let's now delve further into the specific functions of each styling element:
+            </p>
+
+            <div class="code-window">
+                <div class="top-bar">
+                    <div class="close" style="background-color: #ff605c;"></div>
+                    <div class="minimize" style="background-color: #FFBD44;"></div>
+                    <div class="maximize" style="background-color: #00CA4E;"></div>
+                </div>
+                <pre>
+                    <code>
+ <span class="className">.code-window {</span>
+    <span class="classColor">box-shadow:</span> <span class="number">-3px 5px 15px</span> <span class="letter">#a6a6a6</span>;
+    <span class="classColor">background-color:</span> <span class="letter">black</span>;
+    <span class="classColor">color:</span> <span class="letter">silver</span>;
+    <span class="classColor">border-radius:</span> <span class="number">5px</span>;
+    <span class="classColor">margin-left:</span> <span class="letter">auto;</span>
+    <span class="classColor">margin-right:</span> <span class="letter">auto;</span>;
+    <span class="classColor">width:</span> <span class="number">800px</span>;
+ <span class="className">}</span>                      
+                    </code>
+                </pre>
+            </div>
+
+            <p>
+                The code-window class selector has been utilized to add a subtle three-dimensional effect through the implementation of a light gray <span class="ref">box-shadow</span>,
+                as well as a black <span class="ref">background-color</span>. Additionally, a default color of silver has been set for elements without a specified class. To achieve a polished look,
+                a <span class="ref">border-radius</span> of 5px has been applied, creating rounded corners for the window. The <span class="ref">margin-right</span> and <span class="ref">margin-left</span> attributes have been set to auto" to ensure that the window remains
+                centered within the browser window, a best practice for maintaining visual balance. Additionally, a width of 800px has been set for the window.
+            </p>
+
+            <div class="code-window">
+                <div class="top-bar">
+                    <div class="close" style="background-color: #ff605c;"></div>
+                    <div class="minimize" style="background-color: #FFBD44;"></div>
+                    <div class="maximize" style="background-color: #00CA4E;"></div>
+                </div>
+                <pre>
+                    <code>
+ <span class="className">.top-bar {</span>
+    <span class="classColor">height:</span> <span class="number">20px</span>;
+    <span class="classColor">display:</span> <span class="letter">flex</span>;
+    <span class="classColor">align-items:</span> <span class="letter">center</span>;
+ <span class="className">}</span>
+                    </code>
+                </pre>
+            </div>
+
+            <p>
+                This section may be challenging to understand if you are not familiar with the <span class="ref">flex</span> layout. We are establishing a <span class="ref">height</span> of 20px for the <span class="ref">top-bar</span> div and utilizing <span class="ref">flex</span> layout to ensure that the window buttons are aligned horizontally within the div class. The buttons are also centered within the <span class="ref">top-bar</span> div.
+            </p>
+
+            <div class="code-window">
+                <div class="top-bar">
+                    <div class="close" style="background-color: #ff605c;"></div>
+                    <div class="minimize" style="background-color: #FFBD44;"></div>
+                    <div class="maximize" style="background-color: #00CA4E;"></div>
+                </div>
+                <pre>
+                    <code>
+ <span class="className">.close</span>, <span class="className">.minimize</span>, <span class="className">.maximize {</span>
+    <span class="classColor">border-radius:</span> <span class="number">15px</span>;
+    <span class="classColor">margin-inline-start:</span> <span class="number">7px</span>;
+    <span class="classColor">height:</span> <span class="number">11px</span>;
+    <span class="classColor">width:</span> <span class="number">11px</span>;
+ <span class="className">}</span>
+                    </code>
+                </pre>
+            </div>
+
+            <p>
+                Here we are grabbing the selectors <span class="ref">close</span>, <span class="ref">minimize</span>, and <span class="ref">maximize</span> and giving them a <span class="ref">border-radius</span>
+                of 15px so that they appear circular and then adding a <span class="ref">height</span> and <span class="ref">width</span> of 11px so that we have a perfect circle. The one thing some may not understand
+                is <span class="ref">margin-inline-start</span>, this adds margin to the start of the element, so here we are giving it a value of 7px meaning that at the beginging of the <span class="ref">div</span>, there will
+                be 7px from the element in front of it.
+            </p>
+
+            <p>
+                Now we get to move onto the fun part where we can actually display our code to the page. Follow along down below to find out more about this:
+            </p>
+
+            <div class="code-window">
+                <div class="top-bar">
+                    <div class="close" style="background-color: #ff605c;"></div>
+                    <div class="minimize" style="background-color: #FFBD44;"></div>
+                    <div class="maximize" style="background-color: #00CA4E;"></div>
+                </div>
+                <pre>
+                    <code>
+ &#60<span>pre</span>&#62
+    &#60<span>code</span>&#62
+    &#60/<span>code</span>&#62
+ &#60/<span>pre</span>&#62
+                    </code>
+                </pre>
+            </div>
+
+            <p>
+                This is the basic setup that you want to start with if you are trying to display code in your window.
+                The first tag that we see is <span class="ref">pre</span>. This stands for preformatted text and then we have <span class="ref">code</span>.
+                This is where all the code that you want to display goes. Don't forget to add this to the <span class="ref">code-window</span> div. Let's move onto the next part.
+            </p>
+
+            <div class="code-window">
+                <div class="top-bar">
+                    <div class="close" style="background-color: #ff605c;"></div>
+                    <div class="minimize" style="background-color: #FFBD44;"></div>
+                    <div class="maximize" style="background-color: #00CA4E;"></div>
+                </div>
+                <pre>
+                    <code>
+ &#60<span>pre</span>&#62
+    &#60<span>code</span>&#62
+        &amp;#60;p&amp;#62;display a paragraph element to code&amp;#60;/p&amp;#62;
+    &#60/<span>code</span>&#62
+ &#60/<span>pre</span>&#62
+                    </code>
+                </pre>
+            </div>
+
+            <p>
+                In this article, we learned how to do many things. Firstly, we learned how to use <span class="ref">pre</span> and <span class="ref">code</span>.
+                Secondly, we learned how to use <span class="ref"><a href="https://www.w3schools.com/html/html_entities.asp" target="_blank" style="color: blue;">HTML entities</a></span> which can display symbols that would otherwise be read as code in the IDE.
+            </p>
+        </section>
+    </main>
+</body>
+</html>
